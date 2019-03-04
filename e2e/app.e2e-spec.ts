@@ -1,4 +1,5 @@
 import { AppPage } from './app.po';
+import { browser, by, element } from 'protractor';
 
 describe('ng5-create-routes App', () => {
   let page: AppPage;
@@ -7,8 +8,21 @@ describe('ng5-create-routes App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display Home Page', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+  //  browser.sleep(10000);
+    expect(page.getParagraphText()).toEqual('Home Page');
+  });
+
+  it('should display About Button', () => {
+    page.navigateTo();
+    expect(page.getAboutButton().getText()).toEqual('About');
+  });
+
+  it('should route to About Page', () => {
+    page.navigateTo();
+    page.getAboutButton().click();
+    //browser.sleep(10000);
+    expect(page.getAboutText()).toEqual('About Page');
   });
 });
