@@ -25,4 +25,10 @@ describe('ng5-create-routes App', () => {
     //browser.sleep(10000);
     expect(page.getAboutText()).toEqual('About Page');
   });
+
+  it('should route to User List and display John', () => {
+    page.navigateTo();
+    page.getUserButton().click();
+    expect(page.getUserJohn()).toEqual('john');
+  });
 });

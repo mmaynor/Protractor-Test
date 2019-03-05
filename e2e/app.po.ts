@@ -16,4 +16,12 @@ export class AppPage {
   getAboutText() {
     return element(by.css('app-about h2')).getText();
   }
+
+  getUserButton() {
+    return element(by.css('[routerlink="/user/list"]'));
+  }
+
+  getUserJohn() {
+    return element(by.css('app-user-list li')).getText();
+  }
 }
